@@ -57,8 +57,8 @@
 | Mouse wheel | Move forward / backward |
 | H | Toggle the transparency of the main cube |
 | Esc | Open or close the menu |
- 
-  
+
+
 ## How it works
 
  Unity client (C#)  ──HTTP / JSON──►  Python FastAPI backend  ──►  genetic algorithm solver
@@ -74,7 +74,7 @@
 | GET | `/processes` | List the processes on the server |
 | POST | `/change_active_process/{index}` | Make a process the active one |
 | POST | `/terminate_process/{index}` | Terminate a process |
- 
+
 
  Requests are sent with UnityWebRequest inside coroutines, so the UI stays usable while a request is in progress. JSON responses are deserialized into C# classes.
  
@@ -94,11 +94,10 @@
 | Start immediately | Pauses the currently active process and starts the new one right away. |
 
 
-
  A quick demo: n = 8, population 20, generations 20, mutation rate 0.1, accuracy 0, reach 1, fitness mode 1, priority 0.
- 
-##  Getting started
- 
+
+## Getting started
+
  **Download the build (Windows):** get the latest zip from the [Releases page](../../releases), extract it, and run the `.exe`. Windows may show a SmartScreen warning because the executable is not signed (*More info → Run anyway*).
  
  **Run from source:**
@@ -123,13 +122,13 @@ Assets/
     └── managers/  Panel manager, toast notifications
 ```
 
- 
-## Known limitations
+## Known limitations
+
 - The backend address is hard-coded in the scripts under `Assets/scripts/generate/` (search for `http://`). Using another server means editing it and rebuilding.
 - The UI texts and messages are in Hungarian.
 - Results and processes need a reachable backend. Without it, only the placeholder solution is shown.
 - There are no automated tests.
- 
+
 ## Credits
 - **Unity client:** Gergő Rácz
 - **Backend and solver:** Developed by my teammates.
