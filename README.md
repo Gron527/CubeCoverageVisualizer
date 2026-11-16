@@ -1,12 +1,12 @@
 # Cube Coverage Visualizer
  
- University team project (Project Laboratory, University of Pannonia).  
+University team project (Project Laboratory, University of Pannonia).  
  
- A Unity desktop client that visualizes the solutions of a genetic-algorithm-based **cube coverage solver** and lets you start and manage solver processes on a remote Python backend.
+A Unity desktop client that visualizes the solutions of a genetic-algorithm-based **cube coverage solver** and lets you start and manage solver processes on a remote Python backend.
  
 ## Background
  
- The solver works on a variant of the **cube covering** problem, a relative of the well-known cube packing problem. Instead of filling a 3D volume, the goal is to cover the   **surface** of a larger cube, which is closer to surface covering and mesh coverage than to packing.
+The solver works on a variant of the **cube covering** problem, a relative of the well-known cube packing problem. Instead of filling a 3D volume, the goal is to cover the   **surface** of a larger cube, which is closer to surface covering and mesh coverage than to packing.
 - There are n cubes with edge lengths n, n-1, ..., 1. The largest one is fixed.
 - The cubes may overlap, so a cube only has to cover what is not covered yet.
 - The objective is to maximize the total covered surface area of the largest cube. Overlapping areas are counted only once.
@@ -61,10 +61,10 @@
 
 ## How it works
 
- Unity client (C#)  ──HTTP / JSON──►  Python FastAPI backend  ──►  genetic algorithm solver
+Unity client (C#)  ──HTTP / JSON──►  Python FastAPI backend  ──►  genetic algorithm solver
  
 
- The client talks to the backend through these endpoints:  
+The client talks to the backend through these endpoints:  
  
  
 | **Method** | **Endpoint** | **Used for** |
@@ -76,7 +76,7 @@
 | POST | `/terminate_process/{index}` | Terminate a process |
 
 
- Requests are sent with UnityWebRequest inside coroutines, so the UI stays usable while a request is in progress. JSON responses are deserialized into C# classes.
+Requests are sent with UnityWebRequest inside coroutines, so the UI stays usable while a request is in progress. JSON responses are deserialized into C# classes.
  
 ## Parameters of a new process
  
@@ -94,16 +94,21 @@
 | Start immediately | Pauses the currently active process and starts the new one right away. |
 
 
- A quick demo: n = 8, population 20, generations 20, mutation rate 0.1, accuracy 0, reach 1, fitness mode 1, priority 0.
+A quick demo: n = 8, population 20, generations 20, mutation rate 0.1, accuracy 0, reach 1, fitness mode 1, priority 0.
 
 ## Getting started
 
- **Download the build (Windows):** get the latest zip from the [Releases page](../../releases), extract it, and run the `.exe`. Windows may show a SmartScreen warning because the executable is not signed (*More info → Run anyway*).
- 
- **Run from source:**
-1. Install Unity **6000.2.7f2** (Unity 6.2).
-2. Open the project folder in Unity.
-3. Open Assets/Scenes/SampleScene.unity and press **Play**.
+### Download the build (Windows)
+
+Get the latest zip from the [Releases page](../../releases), extract it, and run the `.exe`. 
+
+Windows may show a SmartScreen warning because the executable is not signed (*More info → Run anyway*).
+
+### Run from source
+
+1. Install Unity **6000.2.7f2** (Unity 6.2)
+2. Open the project folder in Unity
+3. Open Assets/Scenes/SampleScene.unity and press **Play**
  
 ##  Tech
 - Unity 6 (6000.2.7f2), C#, uGUI, TextMeshPro
@@ -124,11 +129,11 @@ Assets/
 
 ## Known limitations
 
-- The backend address is hard-coded in the scripts under `Assets/scripts/generate/` (search for `http://`). Using another server means editing it and rebuilding.
-- The UI texts and messages are in Hungarian.
-- Results and processes need a reachable backend. Without it, only the placeholder solution is shown.
-- There are no automated tests.
+- The backend address is hard-coded in the scripts under `Assets/scripts/generate/` (search for `http://`). Using another server means editing it and rebuilding
+- The UI texts and messages are in Hungarian
+- Results and processes need a reachable backend. Without it, only the placeholder solution is shown
+- There are no automated tests
 
 ## Credits
 - **Unity client:** Gergő Rácz
-- **Backend and solver:** Developed by my teammates.
+- **Backend and solver:** Developed by my teammates
