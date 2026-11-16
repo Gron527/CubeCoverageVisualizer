@@ -96,7 +96,7 @@ Requests are sent with UnityWebRequest inside coroutines, so the UI stays usable
 
 A quick demo: n = 8, population 20, generations 20, mutation rate 0.1, accuracy 0, reach 1, fitness mode 1, priority 0.
 
-## Getting started
+## Getting started
 
 ### Download the build (Windows)
 
